@@ -19,6 +19,7 @@ export class AuthController {
     const { token, student } = await this.authMethod.signIn(data);
     res.cookie('token', token, { httpOnly: true });
     res.status(200).json(student);
+
   }
 
   @Get('/signout')
@@ -28,6 +29,6 @@ export class AuthController {
       httpOnly: true,
       expires: new Date(0),
     });
-    res.status(200).json({ message: 'Signed Out successfully' });
+    res.status(200).json({ message: 'You are Signed Out!!!' });
   }
 }
